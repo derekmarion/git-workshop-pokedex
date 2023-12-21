@@ -1,3 +1,8 @@
+# Add Moves to the Frontend
+
+1. Create the `<Moves/>` page React component. Here is the code:
+
+```javascript
 import Row from "react-bootstrap/esm/Row";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -42,3 +47,6 @@ export const Moves = () => {
     </Row>
   );
 };
+```
+
+2. Add a link in the `<Navbar/>` component to the Moves page
