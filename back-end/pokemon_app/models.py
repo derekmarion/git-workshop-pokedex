@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.core import validators as v
 from .validators import validate_name
 
+
 # Create your models here.
 class Pokemon(models.Model):
     # CharField is a character field and has a default max length of 255 characters
@@ -23,6 +24,8 @@ class Pokemon(models.Model):
     description = models.TextField(default="Unknown", validators=[v.MinLengthValidator(7), v.MaxLengthValidator(150)])
     # Boolean field is already ensuring to only take in either True or False
     captured = models.BooleanField(default = False)
+
+    # moves = models.ManyToManyField(Move, related_name="pokemon")
 
     # DUNDER METHOD
     def __str__(self):
