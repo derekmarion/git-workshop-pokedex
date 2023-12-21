@@ -1,3 +1,18 @@
+# Create Moves Django Model
+
+Create the Django model for the moves app
+
+1. Create the model
+
+2. Add fixture data
+
+3. Create & run migrations
+
+**IMPORTANT:** There is one thing in this code you are relying on another project member to create for you. Can you spot it?
+
+Here is the code for the model:
+
+```python
 from django.db import models
 from django.core import validators as v
 from django.core.exceptions import ValidationError
@@ -20,3 +35,21 @@ class Move(models.Model):
 
     def __str__(self):
         return f"| {self.name} | accuracy: {self.accuracy} | power: {self.power} | current_pp: {self.pp}/20|"
+```
+
+Here is the fixture code:
+
+```json
+[
+{
+  "model": "move_app.move",
+  "pk": 1,
+  "fields": {
+    "name": "Psychich",
+    "accuracy": 70,
+    "pp": 20,
+    "power": 80
+  }
+}
+]
+```
